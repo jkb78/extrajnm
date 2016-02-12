@@ -1,0 +1,18 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost opac janium_2015 janium_desktop
+127.0.0.1	morbo.jc_jesteves_datatables.net
+127.0.0.1	morbo.jc_dev2016b.net
+127.0.0.1	morbo.jc_modern_opac.net
+127.0.0.1	proto.janium.net
+#127.0.0.1	morbo.janium.janium.net
+#127.0.0.1	morbo.janium.clasic.net
+#127.0.0.1	morbo.janiumdoc.janium.net
+#127.0.0.1	morbo.oneedoc.janium.net
+#127.0.0.1	opac-primafrio.janium.net
+#127.0.0.1	opac-mrw.janium.net
+#192.168.1.228	opac-mrw.janium.net
