@@ -1,0 +1,164 @@
+/*
+    Sistema Nacional de Bibliotecas de Costa Rica (SINABI)
+    formas.css
+*/
+
+div#div-forma {
+    width: 100%;
+    margin: auto;
+}
+
+.datos_forma {
+    margin: 0 auto;
+    width: 80%;
+    text-align: left;
+}
+
+fieldset {
+    float: left;
+    clear: left;
+    width: 100%;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    border: 0 none #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#595959;
+}
+
+fieldset ol {
+    padding: 1em 1em 0 1em;
+    list-style: none;
+}
+
+fieldset li {
+    float: left;
+    clear: left;
+    width: 100%;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+}
+
+fieldset.submit {
+   text-align: center;
+   float: none;
+   width: auto;
+   border: 0 none #FFF;
+}
+
+label {
+   float: left;
+   width: 20em;
+   margin-right: 0.5em;
+   font-size:10pt;
+   color: #595959;
+}
+
+.border {
+   border-style: solid;
+   border-width: 1px;
+   border-color: #595959;
+   color: #595959;
+   background-color: #efefef;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10pt;
+   line-height: 160%;
+   height: 20px;
+   width: 320px;
+}
+
+input.border:focus   {
+   background: #fff;
+   border: 1px solid #595959;
+}
+
+.obligatorio {
+    color: red;
+}
+
+.submit_activo {
+    border: 1px #000 solid;
+    color: #fff;
+    background: #127cc9;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.submit_inactivo {
+    border: 1px #999 solid;
+    color: #999;
+    background: #99CCFF;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+div#condiciones {
+    height: 1in;
+    overflow: auto;
+    background-color: #eee;
+    display: none;
+}
+
+div#condiciones p {
+    text-align: justify;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div#div-solicitud_ok {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12pt;
+}
+
+select option.deshabilitado {
+    color: #fff;
+    background: #999;
+}
+
+div#mensaje {
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+}
+
+div#creditos {
+    clear: both;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 7pt;
+    color: #96b4b8;
+}
+
+.fail {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: #127cc9;
+    border: 2px solid #0a4663;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 0;
+    margin-right: 50px;
+    padding: 10px;
+}
+
+div.ok {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: #6f6;
+    border: 2px solid #060;
+    color: #060;
+}
+
+div.warn {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: #ff6;
+    border: 2px solid #660;
+    color: #660;
+}

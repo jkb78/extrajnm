@@ -1,0 +1,12 @@
+turquesa  41919c
+
+turquesa oscuro  495f5f
+
+
+azul 1f325d
+
+celeste  1a92d1
+
+celeste del fondo 859dab
+
+gris claro  e7e7e9

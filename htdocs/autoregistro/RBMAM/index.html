@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="es" > <![endif]-->
+<html class="no-js" lang="es" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoregistro de usuarios - Red de Bibliotecas</title>
+  <!--
+    Red de Bibliotecas de Medellín Área Metropolitana
+    index.html
+  -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.min.css">
+  <link rel="stylesheet" href="css/rbmam.css">
+
+  <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+  <div id="logo" class="logo">
+    <img border="0" src="img/cabezote.jpg">
+  </div>
+
+  <div class="row alert-container hide">
+    <div class="small-12 small-centered columns">
+      <div data-alert class="alert-box text-center radius">
+        <span class="alert-message"></span>
+        <a href="#" class="close">&times;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 small-centered columns">
+      <div class="header-form">
+        <h3 class="header">
+          Forma para autoregistro de usuarios
+        </h3>
+        <h6 class="subheader">
+          Ingresa los datos requeridos para crear una cuenta, a menos que se indique lo contrario, los campos son obligatorios.
+        </h6>
+      </div>
+
+      <form name="form_registro" id="form_registro" autocomplete="off" data-abide="ajax">
+        <div class="row row-form">
+          <div class="large-6 columns">
+            <label>Número de documento de identidad
+              <input type="text" name="nocuenta" id="nocuenta" maxlength="320" placeholder="Ingrese el número de documento de identidad" data-abide-validator="required_nonull" autofocus required>
+            </label>
+            <small class="error">El número de documento de identidad es requerido.</small>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="large-4 columns">
+            <label>Nombre
+              <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre o nombres" data-abide-validator="required_nonull" required>
+            </label>
+            <small class="error">El nombre es requerido.</small>
+          </div>
+          <div class="large-4 columns">
+            <label>Apellido paterno <small class="optional">(Opcional)</small>
+              <input type="text" name="apellido_paterno" id="apellido_paterno" placeholder="Apellido paterno" data-abide-validator="surnames">
+            </label>
+            <small class="error">Debe ingresar al menos uno de los apellidos</small>
+          </div>
+          <div class="large-4 columns">
+            <label>Apellido materno <small class="optional">(Opcional)</small>
+              <input type="text" name="apellido_materno" id="apellido_materno" placeholder="Apellido materno" data-abide-validator="surnames">
+            </label>
+            <small class="error">Debe ingresar al menos uno de los apellidos</small>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="large-12 columns">
+            <label>Biblioteca
+              <select name="biblioteca" id="biblioteca" required>
+                <option value="">Seleccione su biblioteca</option>
+                <option value="BPP - SEDE CENTRAL - CARLOS E. RESTREPO">Biblioteca Publica Piloto de Medellín</option>
+                <option value="FILIAL SAN ANTONIO DE PRADO - BPP - SAP">Biblioteca San Antonio de Prado</option>
+                <option value="FILIAL SAN JAVIER LOMA - BPP - SAN JAVIER LA LOMA">Biblioteca San Javier La Loma</option>
+                <option value="FILIAL JUAN ZULETA FERRER - BPP - CAMPO VALDES">Biblioteca Juan Zuleta Ferrer</option>
+                <option value="EL RAIZAL - RATON DE BIBLIOTECA">Biblioteca El Raizal</option>
+                <option value="FILIAL CARLOS CASTRO SAAVEDRA - BPP - FLORENCIA">Filial Carlos Castro Saavedra "Trenes de Papel"</option>
+                <option value="LA FLORESTA - PROXIMIDAD">Biblioteca Pública La Floresta</option>
+                <option value="SANTA ELENA - PROXIMIDAD">Biblioteca Pública Santa Elena</option>
+                <option value="POPULAR - PROXIMIDAD">Biblioteca Pública Popular</option>
+                <option value="FERNANDO GOMEZ MARTINEZ - PROXIMIDAD">Biblioteca Pública Fernando Gómez Martinez</option>
+                <option value="PALMITAS - PROXIMIDAD">Biblioteca Pública Palmitas</option>
+                <option value="SANTA CRUZ - PROXIMIDAD">Biblioteca Pública Santa Cruz</option>
+                <option value="GRANIZAL - PROXIMIDAD">Biblioteca Pública Granizal</option>
+                <option value="LIMONAR - PROXIMIDAD">Biblioteca Pública Limonar</option>
+                <option value="PB - TOMAS CARRASQUILLA - LA QUINTANA">Parque Biblioteca La Quintana "Tomás Carrasquilla"</option>
+                <option value="PB - PRESBITERO JOSE LUIS ARROYAVE - SAN JAVIER">Parque Biblioteca San Javier Pbro José Luis Arroyave</option>
+                <option value="PB - LEON DE GREIFF - LA LADERA">Parque Biblioteca La Ladera</option>
+                <option value="PB - ESPAÑA - SANTO DOMINGO">Parque Biblioteca Santo Domingo</option>
+                <option value="PB - BELEN">Parque Biblioteca Belen</option>
+                <option value="PLANEACION MUNICIPAL - CAM">Biblioteca Especializada de Planeación, CAM</option>
+                <option value="SABANETA - JUAN CARLOS MONTOYA MONTOYA - AREA">Biblioteca Pública Municipal Juan Carlos Montoya Montoya</option>
+                <option value="VILLATINA - RATON DE BIBLIOTECA">Biblioteca Villatina</option>
+                <option value="BIBLIOTECA VIRTUAL DE ANTIOQUIA - UDEA">Biblioteca Virtual de Antioquia</option>
+                <option value="BIBLIOTECA COPACABANA - AREA">Biblioteca Pública Copacabana</option>
+                <option value="BIBLIOTECA CONCEJO DE ITAGÜI - AREA">Biblioteca Pública Municipal Concejo de Itagüí</option>
+                <option value="BARBOSA - ISOLDA ECHAVARRIA - AREA">Biblioteca Pública Isolda Echavarria</option>
+                <option value="CONTRALORIA GENERAL DE MEDELLIN - AREA">Biblioteca Contraloría General de Medellín</option>
+                <option value="BELLO - MARCO FIDEL SUAREZ - AREA">Biblioteca Marco Fidel Suárez del Municipio de Bello</option>
+                <option value="CASA DE LA MEMORIA TEL. 383-40-01">Centro Documental Casa de la Memoria</option>
+                <option value="CENTRO DE DOCUMENTACION AMBIENTAL TEL. 263-96-75">CENTRO DE DOCUMENTACIÓN AMBIENTAL</option>
+                <option value="GIRARDOTA - JACINTO BENAVENTE - AREA">Biblioteca Jacinto Benavente</option>
+                <option value="CALDAS - FRANCISCO JOSE DE CALDAS - AREA">Biblioteca Francisco José de Caldas  </option>
+                <option value="PB - DOCE DE OCTUBRE">Parque Biblioteca Doce de Octubre</option>
+                <option value="PB - FERNANDO BOTERO - SAN CRISTOBAL">Parque Biblioteca San Cristóbal</option>
+                <option value="PB - JOSE HORACIO BETANCUR - SAN ANTONIO DE PRADO">Parque Biblioteca San Antonio de Prado</option>
+                <option value="PB - MANUEL MEJIA VALLEJO - GUAYABAL">Parque Biblioteca Guayabal</option>
+                <option value="PB - ESTANCIAS">Parque Biblioteca Estancias</option>
+                <option value="LUSITANIA - PROXIMIDAD">Biblioteca Lusitania</option>
+                <option value="DIGITAL - VIRTUAL">Biblioteca para Recursos Digitales</option>
+                <option value="LA ESPERANZA - RATON DE BIBLIOTECA">Biblioteca la Esperanza</option>
+                <option value="LA ESTRELLA - BERNARDO ARANGO MACIAS - AREA">BIBLIOTECA BERNARDO ARANGO MACIAS - MUNICIPIO DE LA ESTRELLA</option>
+                <option value="VILLA GUADALUPE - RATON DE BIBLIOTECA">El Centro de Lectura Villa Guadalupe (20120305)</option>
+                <option value="CENTRO DE DOCUMENTACION BUEN COMIENZO">Centro de Documentación Buen Comienzo</option>
+              </select>
+            </label>
+            <small class="error">Seleccione una biblioteca.</small>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="large-12 columns">
+            <label>Fecha de nacimiento</label>
+          </div>
+          <div class="large-4 columns">
+            <div class="row collapse prefix-radius">
+              <div class="small-3 columns">
+                <span class="prefix">Año</span>
+              </div>
+              <div class="small-9 columns">
+                <input type="text" name="year" id="year" placeholder="Año de nacimiento" maxlength="4" pattern="FullYear" required>
+                <small class="error">Ingrese el año de nacimiento AAAA</small>
+              </div>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="row collapse prefix-radius">
+              <div class="small-3 columns">
+                <span class="prefix">Mes</span>
+              </div>
+              <div class="small-9 columns">
+                <input type="text" name="month" id="month" placeholder="Mes de nacimiento" maxlength="2" pattern="Month" required>
+                <small class="error">Ingrese el mes de nacimiento MM</small>
+              </div>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="row collapse prefix-radius">
+              <div class="small-3 columns">
+                <span class="prefix">Día</span>
+              </div>
+              <div class="small-9 columns">
+                <input type="text" name="day" id="day" placeholder="Día de nacimiento" maxlength="2" pattern="Day" required>
+                <small class="error">Ingrese el día de nacimiento DD</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="large-4 columns">
+            <label>Sexo
+              <select name="sexo" id="sexo" required>
+                <option value="">Seleccione su sexo</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+              </select>
+            </label>
+            <small class="error">Seleccione su sexo</small>
+          </div>
+          <div class="large-4 columns">
+            <label>Teléfono
+              <input type="text" name="telefono" id="telefono" placeholder="Número telefónico con el formato # ## ## ##" pattern="Phone" required>
+            </label>
+            <small class="error">Ingrese su número telefónico: # ## ## ##</small>
+          </div>
+          <div class="large-4 columns">
+            <label>Celular <small class="optional">(Opcional)</small>
+              <input type="text" name="celular" id="celular" placeholder="Ingrese su número celular sin espacios" maxlength="10" pattern="CellPhone">
+            </label>
+            <small class="error">Únicamente números, sin espacios: 1234567890</small>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="large-4 columns">
+            <label>Ocupación <small class="optional">(Opcional)</small>
+              <select name="ocupacion" id="ocupacion">
+                <option value="">Seleccione su ocupación</option>
+                <option value="AMAS DE CASA">AMAS DE CASA</option>
+                <option value="DESEMPLEADOS">DESEMPLEADOS</option>
+                <option value="DOCENTES">DOCENTES</option>
+                <option value="EMPLEADOS">EMPLEADOS</option>
+                <option value="ESCRITORES">ESCRITORES</option>
+                <option value="ESTUDIANTES">ESTUDIANTES</option>
+                <option value="INDEPENDIENTE">INDEPENDIENTE</option>
+                <option value="INVESTIGADORES">INVESTIGADORES</option>
+                <option value="JUBILADOS">JUBILADOS</option>
+                <option value="PROFESIONALES">PROFESIONALES</option>
+              </select>
+            </label>
+          </div>
+          <div class="large-4 columns">
+            <label>Lugar de trabajo <small class="optional">(Opcional)</small>
+              <input type="text" name="lugar_trabajo" id="lugar_trabajo" placeholder="Empresa o lugar donde labora" data-abide-validator="optional_nonull">
+            </label>
+            <small class="error">Capture su lugar de trabajo</small>
+          </div>
+          <div class="large-4 columns">
+            <label>Lugar de estudio <small class="optional">(Opcional)</small>
+              <input type="text" name="lugar_estudio" id="lugar_estudio" placeholder="Institución donde estudia" data-abide-validator="optional_nonull">
+            </label>
+            <small class="error">Ingrese su lugar de estudio</small>
+          </div>
+        </div>
+        <div class="row row-form">
+          <fieldset>
+            <legend>Domicilio</legend>
+            <div class="row">
+              <div class="large-6 columns">
+                <label>Dirección
+                  <input type="text" name="direccion" id="direccion" placeholder="Dirección" data-abide-validator="required_nonull" required>
+                </label>
+                <small class="error">Campo de domicilio requerido</small>
+              </div>
+              <div class="large-6 columns">
+                <label>Barrio
+                  <input type="text" name="barrio" id="barrio" placeholder="Barrio" data-abide-validator="required_nonull" required>
+                </label>
+                <small class="error">Campo de domicilio requerido</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-6 columns">
+                <label>Corregimiento, ciudad o municipio
+                  <input type="text" name="ciudad" id="ciudad" placeholder="Corregimiento, ciudad o municipio" data-abide-validator="required_nonull" required>
+                </label>
+                <small class="error">Campo de domicilio requerido</small>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="row row-form">
+          <div class="large-6 columns">
+            <label>Correo electrónico
+              <input type="email" name="email" id="email" placeholder="Dirección de correo electrónico" required>
+            </label>
+            <small class="error">Ingrese una dirección de correo electrónico valida</small>
+          </div>
+          <div class="large-6 columns">
+            <label>Persona con discapacidad
+              <select name="discapacidad" id="discapacidad" required>
+                <option value="NO">No</option>
+                <option value="SI">Si</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="row row-form">
+          <fieldset>
+            <legend>Referencias Personales</legend>
+            <h5 class="instructions">Dos referencias personales (mínimo un familiar, mayores de edad, no repetir teléfonos, no celulares).</h5>
+            <div class="row">
+              <div class="large-6 columns">
+                <label>Nombre y apellido
+                  <input type="text" name="referencia1_nombre" id="referencia1_nombre" placeholder="Nombre completo y primer apellido en mayúscula sostenida" required>
+                </label>
+                <small class="error">Ingrese nombre y apellido de su primera referencia</small>
+              </div>
+              <div class="large-3 columns">
+                <label>Parentesco
+                  <input type="text" name="referencia1_parentesco" id="referencia1_parentesco" placeholder="Parentesco" required>
+                </label>
+                <small class="error">Parentesco de la primera referencia</small>
+              </div>
+              <div class="large-3 columns">
+                <label>Teléfono
+                  <input type="text" name="referencia1_telefono" id="referencia1_telefono" placeholder="Teléfono, formato # ## ## ##" pattern="Phone" required>
+                </label>
+                <small class="error">Teléfono de la primera referencia</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-6 columns">
+                <label>Nombre y apellido
+                  <input type="text" name="referencia2_nombre" id="referencia2_nombre" placeholder="Nombre completo y primer apellido en mayúscula sostenida" required>
+                </label>
+                <small class="error">Ingrese nombre y apellido de su segunda referencia</small>
+              </div>
+              <div class="large-3 columns">
+                <label>Parentesco
+                  <input type="text" name="referencia2_parentesco" id="referencia2_parentesco" placeholder="Parentesco" required>
+                </label>
+                <small class="error">Parentesco de la segunda referencia</small>
+              </div>
+              <div class="large-3 columns">
+                <label>Teléfono
+                  <input type="text" name="referencia2_telefono" id="referencia2_telefono" placeholder="Teléfono, formato # ## ## ##" pattern="Phone" required>
+                </label>
+                <small class="error">Teléfono de la segunda referencia</small>
+              </div>
+            </div>
+            <h5 class="instructions">Representante o acudiente <span class="mandatory suggestion">(Obligatorio para solicitantes menores de 7 años)</span>.</h5>
+            <h6 class="guarantor_instructions hide">El solicitante es menor de 7 años, favor de llenar todos los datos de representante.</h6>
+            <div class="row">
+              <div class="large-6 columns guarantor">
+                <label>Nombre y apellido <small class="optional">(Opcional)</small>
+                  <input type="text" name="fiador_nombre" id="fiador_nombre" placeholder="Nombre completo y apellido(s)" data-abide-validator="guarantor_required">
+                </label>
+                <small class="error">Ingrese el nombre del representante o acudiente</small>
+              </div>
+              <div class="large-3 columns guarantor">
+                <label>Parentesco <small class="optional">(Opcional)</small>
+                  <select name="fiador_parentesco" id="fiador_parentesco" data-abide-validator="guarantor_required">
+                    <option value="">Seleccione su parentesco</option>
+                    <option value="Familiar">Familiar</option>
+                    <option value="Amigo/a">Amigo/a</option>
+                    <option value="Novio/a">Novio/a</option>
+                    <option value="Conocido/a">Conocido/a</option>
+                  </select>
+                </label>
+                <small class="error">Seleccione su parentesco</small>
+              </div>
+              <div class="large-3 columns guarantor">
+                <label>Teléfono <small class="optional">(Opcional)</small>
+                  <input type="text" name="fiador_telefono" id="fiador_telefono" placeholder="Teléfono, formato # ## ## ##" data-abide-validator="guarantor_required">
+                </label>
+                <small class="error">Número telefónico: # ## ## ##</small>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="row row-form">
+          <div class="large-12 columns">
+            <label for="autorizo_publicidad">
+              <input type="checkbox" name="autorizo_publicidad" id="autorizo_publicidad">
+              Autorizo recibir publicidad del SBPM
+            </label>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="large-12 columns">
+            <p class="text-center">Texto Habeas Data</p>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="large-12 columns">
+            <button type="submit" class="medium button green right">Crear registro</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/foundation.js"></script>
+  <script src="js/vendor/foundation.abide.js"></script>
+  <script src="js/vendor/foundation.alert.js"></script>
+  <script src="js/janium_api.js"></script>
+  <script src="js/rbmam.js"></script>
+</body>
+</html>

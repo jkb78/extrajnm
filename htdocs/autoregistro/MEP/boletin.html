@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>Biblioteca Digital MEP - Janium</title>
+<style type="text/css">
+<!--
+body {
+	font-family: Tahoma, Arial, Verdana;
+	font-size: 11px;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+	background-color: #efefef;
+}
+p {
+	margin: 0px;
+	padding: 0px;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+hr {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #000033;
+	padding: 0px;
+	margin-top: 6px;
+	margin-right: 0px;
+	margin-bottom: 6px;
+	margin-left: 0px;
+}
+#news {
+	width: auto;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#news ul {
+	margin: 0px;
+	padding: 0px;
+}
+#news li {
+	list-style-type: none;
+}
+#news a {
+	display: block;
+	background-image: url(images/apariencia/flechas.gif);
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 12px;
+	background-position: 0px 5px;
+}
+style1 {color: #FFFFFF;
+		width:526;
+		height:410;
+		 }
+style2 {color: #000033;
+		width:526;
+		height:410;
+		text-transform:capitalize;
+		 }
+-->
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+
+<body>
+
+<div id="datacontainer" style="position:absolute; left:0px; top:7px; width:100%; background-color: #efefef; layer-background-color: #efefef; border: 1px none #000000;" onMouseover="scrollspeed=0" onMouseout="scrollspeed=cache">
+
+  <div id="news">
+		 <hr size="1">
+		 <a class="stylel"> El pasado viernes 17 de enero se hizo la entrega oficial de las 280 Bibliotecas y las cuentas al M&oacute;dulo de Control Bibliogr&aacute;fico a 294 usuarios de Bibliotecas Escolares del MEP.</a>
+		 <hr size="1">
+		 <a class="stylel">  Bibliotecas que se encuentran actualmente disponibles desde Janium: </a>
+ 		 <hr size="1">
+		 <a href="http://mep.janium.net/janium-bin/janium_login_opac.pl?bib=lebdp" target="_blank" class="stylel">1. Liceo Experimental Biling&uuml;e de Palmares (ver cat&aacute;logo)</a>
+		 <hr size="1"> 
+		 <a href="http://mep.janium.net/janium-bin/janium_login_opac.pl?bib=ldsj" target="_blank" class="stylel"> 2. Liceo de San Jos&eacute; (ver cat&aacute;logo)</a>
+		 <hr size="1"> 
+		 <a href="http://mep.janium.net/janium-bin/janium_login_opac.pl?bib=ida" target="_blank" class="stylel">3. Instituto de Alajuela (ver cat&aacute;logo)</a>
+		 <hr size="1"> 
+    <a href="http://mep.janium.net/janium-bin/janium_login_opac.pl?bib=lsr" target="_blank" class="stylel">4. Liceo San Rafael (ver cat&aacute;logo)</a>
+         <hr size="1"> 
+		 <a href="http://mep.janium.net/janium-bin/janium_login_opac.pl?bib=ldar" target="_blank" class="stylel">5. Liceo de Alfaro Ruiz (ver cat&aacute;logo)</a>
+         <hr size="1"> 
+         <a href="http://mep.janium.net/janium-bin/janium_login_opac.pl?bib=esm" target="_blank" class="stylel">6. Escuela San Mart&iacute;n (ver cat&aacute;logo)</a>
+         <hr size="1"> 
+         <a href="http://mep.janium.net/janium-bin/janium_login_opac.pl?bib=ldsc" target="_blank" class="stylel">7. Liceo de San Carlos (ver cat&aacute;logo)</a>
+         <hr size="1"> 
+
+</div>
+</div>
+<script type="text/javascript">
+
+//Specify speed of scroll. Larger=faster (ie: 5)
+var scrollspeed=cache=1
+
+//Specify intial delay before scroller starts scrolling (in miliseconds):
+var initialdelay=1
+
+function initializeScroller(){
+dataobj=document.all? document.all.datacontainer : document.getElementById("datacontainer")
+dataobj.style.top="100px"
+setTimeout("getdataheight()", initialdelay)
+}
+
+function getdataheight(){
+thelength=dataobj.offsetHeight
+if (thelength==0)
+setTimeout("getdataheight()",5)
+else
+scrollDiv()
+}
+
+function scrollDiv(){
+dataobj.style.top=parseInt(dataobj.style.top)-scrollspeed+"px"
+if (parseInt(dataobj.style.top)<thelength*(-1))
+dataobj.style.top="100px"
+setTimeout("scrollDiv()",100)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializeScroller, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializeScroller)
+else
+window.onload=initializeScroller
+
+</script>
+
+</body>
+</html>
