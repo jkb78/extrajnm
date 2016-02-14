@@ -1,2 +1,2 @@
 # extrajnm
-Contiene archivos complementarios utilizados en Janium
+Contiene archivos complementarios
