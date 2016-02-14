@@ -30,3 +30,5 @@ ln -s ~/JNMSDK/extrajnm/htdocs/Imagenes/referencista htdocs/Imagenes
 ln -s ~/JNMSDK/extrajnm/htdocs/autoregistro htdocs
 
 ln -s ~/JNMSDK/extrajnm/htdocs/js/custom/* htdocs/js/custom
+
+ln -s ~/JNMSDK/extrajnm/local .
