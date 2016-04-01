@@ -9,6 +9,7 @@ mkdir etc/apache
 mkdir logs
 mkdir logs/busquedas
 mkdir logs/ts
+mkdir logs/jd
 mkdir htdocs/Descargar
 
 # Coloca los permisos requeridos a los directorios
