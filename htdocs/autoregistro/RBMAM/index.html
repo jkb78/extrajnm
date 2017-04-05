@@ -48,6 +48,20 @@
             </label>
             <small class="error">El número de documento de identidad es requerido.</small>
           </div>
+          <div class="large-6 columns">
+            <label>Tipo de identificación
+              <select name="tipo_identificacion" id="tipo_identificacion" required>
+                <option value="">Seleccione el tipo de identificacion</option>
+                <option value="Cédula">Cédula</option>
+                <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                <option value="Registro Civil">Registro Civil</option>
+                <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                <option value="NIT">NIT</option>
+                <option value="NUIP">NUIP</option>
+              </select>
+            </label>
+            <small class="error">Seleccione su tipo de identificación</small>
+          </div>
         </div>
         <div class="row row-form">
           <div class="large-4 columns">
@@ -57,14 +71,14 @@
             <small class="error">El nombre es requerido.</small>
           </div>
           <div class="large-4 columns">
-            <label>Apellido paterno <small class="optional">(Opcional)</small>
-              <input type="text" name="apellido_paterno" id="apellido_paterno" placeholder="Apellido paterno" data-abide-validator="surnames">
+            <label>Primer Apellido<small class="optional">(Opcional)</small>
+              <input type="text" name="apellido_paterno" id="apellido_paterno" placeholder="Primer Apellido" data-abide-validator="surnames">
             </label>
             <small class="error">Debe ingresar al menos uno de los apellidos</small>
           </div>
           <div class="large-4 columns">
-            <label>Apellido materno <small class="optional">(Opcional)</small>
-              <input type="text" name="apellido_materno" id="apellido_materno" placeholder="Apellido materno" data-abide-validator="surnames">
+            <label>Segundo Apellido<small class="optional">(Opcional)</small>
+              <input type="text" name="apellido_materno" id="apellido_materno" placeholder="Segundo Apellido" data-abide-validator="surnames">
             </label>
             <small class="error">Debe ingresar al menos uno de los apellidos</small>
           </div>
@@ -73,93 +87,226 @@
           <div class="large-12 columns">
             <label>Biblioteca
               <select name="biblioteca" id="biblioteca" required>
-                <option value="">Seleccione su biblioteca</option>
-                <option value="BPP - SEDE CENTRAL - CARLOS E. RESTREPO">Biblioteca Publica Piloto de Medellín</option>
-                <option value="FILIAL SAN ANTONIO DE PRADO - BPP - SAP">Biblioteca San Antonio de Prado</option>
-                <option value="FILIAL SAN JAVIER LOMA - BPP - SAN JAVIER LA LOMA">Biblioteca San Javier La Loma</option>
-                <option value="FILIAL JUAN ZULETA FERRER - BPP - CAMPO VALDES">Biblioteca Juan Zuleta Ferrer</option>
-                <option value="EL RAIZAL - RATON DE BIBLIOTECA">Biblioteca El Raizal</option>
-                <option value="FILIAL CARLOS CASTRO SAAVEDRA - BPP - FLORENCIA">Filial Carlos Castro Saavedra "Trenes de Papel"</option>
-                <option value="LA FLORESTA - PROXIMIDAD">Biblioteca Pública La Floresta</option>
-                <option value="SANTA ELENA - PROXIMIDAD">Biblioteca Pública Santa Elena</option>
-                <option value="POPULAR - PROXIMIDAD">Biblioteca Pública Popular</option>
-                <option value="FERNANDO GOMEZ MARTINEZ - PROXIMIDAD">Biblioteca Pública Fernando Gómez Martinez</option>
-                <option value="PALMITAS - PROXIMIDAD">Biblioteca Pública Palmitas</option>
-                <option value="SANTA CRUZ - PROXIMIDAD">Biblioteca Pública Santa Cruz</option>
-                <option value="GRANIZAL - PROXIMIDAD">Biblioteca Pública Granizal</option>
-                <option value="LIMONAR - PROXIMIDAD">Biblioteca Pública Limonar</option>
-                <option value="PB - TOMAS CARRASQUILLA - LA QUINTANA">Parque Biblioteca La Quintana "Tomás Carrasquilla"</option>
-                <option value="PB - PRESBITERO JOSE LUIS ARROYAVE - SAN JAVIER">Parque Biblioteca San Javier Pbro José Luis Arroyave</option>
-                <option value="PB - LEON DE GREIFF - LA LADERA">Parque Biblioteca La Ladera</option>
-                <option value="PB - ESPAÑA - SANTO DOMINGO">Parque Biblioteca Santo Domingo</option>
-                <option value="PB - BELEN">Parque Biblioteca Belen</option>
-                <option value="PLANEACION MUNICIPAL - CAM">Biblioteca Especializada de Planeación, CAM</option>
-                <option value="SABANETA - JUAN CARLOS MONTOYA MONTOYA - AREA">Biblioteca Pública Municipal Juan Carlos Montoya Montoya</option>
-                <option value="VILLATINA - RATON DE BIBLIOTECA">Biblioteca Villatina</option>
-                <option value="BIBLIOTECA VIRTUAL DE ANTIOQUIA - UDEA">Biblioteca Virtual de Antioquia</option>
-                <option value="BIBLIOTECA COPACABANA - AREA">Biblioteca Pública Copacabana</option>
-                <option value="BIBLIOTECA CONCEJO DE ITAGÜI - AREA">Biblioteca Pública Municipal Concejo de Itagüí</option>
-                <option value="BARBOSA - ISOLDA ECHAVARRIA - AREA">Biblioteca Pública Isolda Echavarria</option>
-                <option value="CONTRALORIA GENERAL DE MEDELLIN - AREA">Biblioteca Contraloría General de Medellín</option>
-                <option value="BELLO - MARCO FIDEL SUAREZ - AREA">Biblioteca Marco Fidel Suárez del Municipio de Bello</option>
-                <option value="CASA DE LA MEMORIA TEL. 383-40-01">Centro Documental Casa de la Memoria</option>
-                <option value="CENTRO DE DOCUMENTACION AMBIENTAL TEL. 263-96-75">CENTRO DE DOCUMENTACIÓN AMBIENTAL</option>
-                <option value="GIRARDOTA - JACINTO BENAVENTE - AREA">Biblioteca Jacinto Benavente</option>
-                <option value="CALDAS - FRANCISCO JOSE DE CALDAS - AREA">Biblioteca Francisco José de Caldas  </option>
-                <option value="PB - DOCE DE OCTUBRE">Parque Biblioteca Doce de Octubre</option>
-                <option value="PB - FERNANDO BOTERO - SAN CRISTOBAL">Parque Biblioteca San Cristóbal</option>
-                <option value="PB - JOSE HORACIO BETANCUR - SAN ANTONIO DE PRADO">Parque Biblioteca San Antonio de Prado</option>
-                <option value="PB - MANUEL MEJIA VALLEJO - GUAYABAL">Parque Biblioteca Guayabal</option>
-                <option value="PB - ESTANCIAS">Parque Biblioteca Estancias</option>
-                <option value="LUSITANIA - PROXIMIDAD">Biblioteca Lusitania</option>
-                <option value="DIGITAL - VIRTUAL">Biblioteca para Recursos Digitales</option>
-                <option value="LA ESPERANZA - RATON DE BIBLIOTECA">Biblioteca la Esperanza</option>
-                <option value="LA ESTRELLA - BERNARDO ARANGO MACIAS - AREA">BIBLIOTECA BERNARDO ARANGO MACIAS - MUNICIPIO DE LA ESTRELLA</option>
-                <option value="VILLA GUADALUPE - RATON DE BIBLIOTECA">El Centro de Lectura Villa Guadalupe (20120305)</option>
-                <option value="CENTRO DE DOCUMENTACION BUEN COMIENZO">Centro de Documentación Buen Comienzo</option>
-              </select>
+                <option value="AREA - BARBOSA - ISOLDA ECHAVARRIA">AREA - BARBOSA - ISOLDA ECHAVARRIA</option>
+                <option value="AREA - BELLO - MARCO FIDEL SUAREZ">AREA - BELLO - MARCO FIDEL SUAREZ</option>
+                <option value="AREA - BIBLIOTECA CONCEJO DE ITAGÜI">AREA - BIBLIOTECA CONCEJO DE ITAGÜI</option>
+                <option value="AREA - BIBLIOTECA COPACABANA">AREA - BIBLIOTECA COPACABANA</option>
+                <option value="AREA - CALDAS - FRANCISCO JOSE DE CALDAS">AREA - CALDAS - FRANCISCO JOSE DE CALDAS</option>
+                <option value="AREA - CONTRALORIA GENERAL DE MEDELLIN">AREA - CONTRALORIA GENERAL DE MEDELLIN</option>
+                <option value="AREA - GIRARDOTA - JACINTO BENAVENTE">AREA - GIRARDOTA - JACINTO BENAVENTE</option>
+                <option value="AREA - LA ESTRELLA - BERNARDO ARANGO MACIAS">AREA - LA ESTRELLA - BERNARDO ARANGO MACIAS</option>
+                <option value="AREA - SABANETA - JUAN CARLOS MONTOYA MONTOYA">AREA - SABANETA - JUAN CARLOS MONTOYA MONTOYA</option>
+                <option value="BPP - FILIAL CARLOS CASTRO SAAVEDRA - FLORENCIA">BPP - FILIAL CARLOS CASTRO SAAVEDRA - FLORENCIA</option>
+                <option value="BPP - FILIAL JUAN ZULETA FERRER - CAMPO VALDES">BPP - FILIAL JUAN ZULETA FERRER - CAMPO VALDES</option>
+                <option value="BPP - FILIAL SAN ANTONIO DE PRADO - SAP">BPP - FILIAL SAN ANTONIO DE PRADO - SAP</option>
+                <option value="BPP - FILIAL SAN JAVIER LOMA - SAN JAVIER LA LOMA">BPP - FILIAL SAN JAVIER LOMA - SAN JAVIER LA LOMA</option>
+                <option value="BPP - SEDE CENTRAL - CARLOS E. RESTREPO">BPP - SEDE CENTRAL - CARLOS E. RESTREPO</option>
+                <option value="PB - BELEN">PB - BELEN</option>
+                <option value="PB - DOCE DE OCTUBRE">PB - DOCE DE OCTUBRE</option>
+                <option value="PB - ESPAÑA - SANTO DOMINGO">PB - ESPAÑA - SANTO DOMINGO</option>
+                <option value="PB - ESTANCIAS">PB - ESTANCIAS</option>
+                <option value="PB - FERNANDO BOTERO - SAN CRISTOBAL">PB - FERNANDO BOTERO - SAN CRISTOBAL</option>
+                <option value="PB - JOSE HORACIO BETANCUR - SAN ANTONIO DE PRADO">PB - JOSE HORACIO BETANCUR - SAN ANTONIO DE PRADO</option>
+                <option value="PB - LEON DE GREIFF - LA LADERA">PB - LEON DE GREIFF - LA LADERA</option>
+                <option value="PB - MANUEL MEJIA VALLEJO - GUAYABAL">PB - MANUEL MEJIA VALLEJO - GUAYABAL</option>
+                <option value="PB - PRESBITERO JOSE LUIS ARROYAVE - SAN JAVIER">PB - PRESBITERO JOSE LUIS ARROYAVE - SAN JAVIER</option>
+                <option value="PB - TOMAS CARRASQUILLA - LA QUINTANA">PB - TOMAS CARRASQUILLA - LA QUINTANA</option>
+                <option value="PROXIMIDAD - ALTAVISTA">PROXIMIDAD - ALTAVISTA</option>
+                <option value="PROXIMIDAD - AVILA">PROXIMIDAD - AVILA</option>
+                <option value="PROXIMIDAD - FERNANDO GOMEZ MARTINEZ">PROXIMIDAD - FERNANDO GOMEZ MARTINEZ</option>
+                <option value="PROXIMIDAD - GRANIZAL">PROXIMIDAD - GRANIZAL</option>
+                <option value="PROXIMIDAD - LA FLORESTA">PROXIMIDAD - LA FLORESTA</option>
+                <option value="PROXIMIDAD - LIMONAR">PROXIMIDAD - LIMONAR</option>
+                <option value="PROXIMIDAD - LUSITANIA">PROXIMIDAD - LUSITANIA</option>
+                <option value="PROXIMIDAD - PALMITAS">PROXIMIDAD - PALMITAS</option>
+                <option value="PROXIMIDAD - POPULAR">PROXIMIDAD - POPULAR</option>
+                <option value="PROXIMIDAD - SANTA CRUZ">PROXIMIDAD - SANTA CRUZ</option>
+                <option value="PROXIMIDAD - SANTA ELENA">PROXIMIDAD - SANTA ELENA</option>
+                <option value="RATON DE BIBLIOTECA - EL RAIZAL">RATON DE BIBLIOTECA - EL RAIZAL</option>
+                <option value="RATON DE BIBLIOTECA - LA ESPERANZA">RATON DE BIBLIOTECA - LA ESPERANZA</option>
+                <option value="RATON DE BIBLIOTECA - VILLA GUADALUPE">RATON DE BIBLIOTECA - VILLA GUADALUPE</option>
+                <option value="RATON DE BIBLIOTECA - VILLATINA">RATON DE BIBLIOTECA - VILLATINA</option>
+                <option value="SBPM - CASA DE LA MEMORIA - TEL. 383-40-01">SBPM - CASA DE LA MEMORIA - TEL. 383-40-01</option>
+                <option value="SBPM - CENTRO DE DOCUM. AMBIENTAL - TEL. 263-96-75">SBPM - CENTRO DE DOCUM. AMBIENTAL - TEL. 263-96-75</option>
+                <option value=" SBPM - CENTRO DE DOCUMENTACION AREA METROPOLITANA"> SBPM - CENTRO DE DOCUMENTACION AREA METROPOLITANA</option>
+                <option value=" SBPM - CENTRO DE DOCUMENTACION BUEN COMIENZO"> SBPM - CENTRO DE DOCUMENTACION BUEN COMIENZO</option>
+                <option value=" SBPM - CENTRO DE DOCUMENTACION INDER"> SBPM - CENTRO DE DOCUMENTACION INDER</option>
+                <option value=" SBPM - PLANEACION MUNICIPAL - CAM"> SBPM - PLANEACION MUNICIPAL - CAM</option>
+               </select>
             </label>
             <small class="error">Seleccione una biblioteca.</small>
           </div>
         </div>
+
+<!-- desde aqui -->
+        <legend>Fecha de Nacimiento</legend>
         <div class="row row-form">
-          <div class="large-12 columns">
-            <label>Fecha de nacimiento</label>
+          <div class="large-4 columns">
+            <label>Año
+              <select name="year" id="year" required>
+                <option value="">Seleccione su año de nacimiento</option>
+                <option value="1920">1920</option>
+                <option value="1921">1921</option>
+                <option value="1922">1922</option>
+                <option value="1923">1923</option>
+                <option value="1924">1924</option>
+                <option value="1925">1925</option>
+                <option value="1926">1926</option>
+                <option value="1927">1927</option>
+                <option value="1928">1928</option>
+                <option value="1929">1929</option>
+                <option value="1930">1930</option>
+                <option value="1931">1931</option>
+                <option value="1932">1932</option>
+                <option value="1933">1933</option>
+                <option value="1934">1934</option>
+                <option value="1935">1935</option>
+                <option value="1936">1936</option>
+                <option value="1937">1937</option>
+                <option value="1938">1938</option>
+                <option value="1939">1939</option>
+                <option value="1940">1940</option>
+                <option value="1941">1941</option>
+                <option value="1942">1942</option>
+                <option value="1943">1943</option>
+                <option value="1944">1944</option>
+                <option value="1945">1945</option>
+                <option value="1946">1946</option>
+                <option value="1947">1947</option>
+                <option value="1948">1948</option>
+                <option value="1949">1949</option>
+                <option value="1950">1950</option>
+                <option value="1951">1951</option>
+                <option value="1952">1952</option>
+                <option value="1953">1953</option>
+                <option value="1954">1954</option>
+                <option value="1955">1955</option>
+                <option value="1956">1956</option>
+                <option value="1957">1957</option>
+                <option value="1958">1958</option>
+                <option value="1959">1959</option>
+                <option value="1960">1960</option>
+                <option value="1961">1961</option>
+                <option value="1962">1962</option>
+                <option value="1963">1963</option>
+                <option value="1964">1964</option>
+                <option value="1965">1965</option>
+                <option value="1966">1966</option>
+                <option value="1967">1967</option>
+                <option value="1968">1968</option>
+                <option value="1969">1969</option>
+                <option value="1970">1970</option>
+                <option value="1971">1971</option>
+                <option value="1972">1972</option>
+                <option value="1973">1973</option>
+                <option value="1974">1974</option>
+                <option value="1975">1975</option>
+                <option value="1976">1976</option>
+                <option value="1977">1977</option>
+                <option value="1978">1978</option>
+                <option value="1979">1979</option>
+                <option value="1980">1980</option>
+                <option value="1981">1981</option>
+                <option value="1982">1982</option>
+                <option value="1983">1983</option>
+                <option value="1984">1984</option>
+                <option value="1985">1985</option>
+                <option value="1986">1986</option>
+                <option value="1987">1987</option>
+                <option value="1988">1988</option>
+                <option value="1989">1989</option>
+                <option value="1990">1990</option>
+                <option value="1991">1991</option>
+                <option value="1992">1992</option>
+                <option value="1993">1993</option>
+                <option value="1994">1994</option>
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                </select>
+            </label>
+            <small class="error">Seleccione su año de nacimiento AAAA</small>
           </div>
           <div class="large-4 columns">
-            <div class="row collapse prefix-radius">
-              <div class="small-3 columns">
-                <span class="prefix">Año</span>
-              </div>
-              <div class="small-9 columns">
-                <input type="text" name="year" id="year" placeholder="Año de nacimiento" maxlength="4" pattern="FullYear" required>
-                <small class="error">Ingrese el año de nacimiento AAAA</small>
-              </div>
-            </div>
+            <label>Mes
+              <select name="month" id="month" required>
+                <option value="">Seleccione su mes de nacimiento</option>
+                <option value="Enero">Enero</option>
+                <option value="Febrero">Febrero</option>
+                <option value="Marzo">Marzo</option>
+                <option value="Abril">Abril</option>
+                <option value="Mayo">Mayo</option>
+                <option value="Junio">Junio</option>
+                <option value="Julio">Julio</option>
+                <option value="Agosto">Agosto</option>
+                <option value="Septiembre">Septiembre</option>
+                <option value="Octubre">Octubre</option>
+                <option value="Noviembre">Noviembre</option>
+                <option value="Diciembre">Diciembre</option>
+              </select>
+            </label>
+            <small class="error">Seleccione su mes de nacimiento</small>
           </div>
           <div class="large-4 columns">
-            <div class="row collapse prefix-radius">
-              <div class="small-3 columns">
-                <span class="prefix">Mes</span>
-              </div>
-              <div class="small-9 columns">
-                <input type="text" name="month" id="month" placeholder="Mes de nacimiento" maxlength="2" pattern="Month" required>
-                <small class="error">Ingrese el mes de nacimiento MM</small>
-              </div>
-            </div>
-          </div>
-          <div class="large-4 columns">
-            <div class="row collapse prefix-radius">
-              <div class="small-3 columns">
-                <span class="prefix">Día</span>
-              </div>
-              <div class="small-9 columns">
-                <input type="text" name="day" id="day" placeholder="Día de nacimiento" maxlength="2" pattern="Day" required>
-                <small class="error">Ingrese el día de nacimiento DD</small>
-              </div>
-            </div>
+            <label>Día
+              <select name="day" id="day" required>
+                <option value="">Seleccione su día de nacimiento</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+            </label>
+            <small class="error">Seleccione su día de nacimiento DD</small>
           </div>
         </div>
+<!-- hasta aqui -->
+
         <div class="row row-form">
           <div class="large-4 columns">
             <label>Sexo
@@ -271,7 +418,13 @@
               </div>
               <div class="large-3 columns">
                 <label>Parentesco
-                  <input type="text" name="referencia1_parentesco" id="referencia1_parentesco" placeholder="Parentesco" required>
+                    <select name="referencia1_parentesco" id="referencia1_parentesco" data-abide-validator="guarantor_required" placeholder="Parentesco" required>
+                    <option value="">Seleccione su parentesco</option>
+                    <option value="Familiar">Familiar</option>
+                    <option value="Amigo/a">Amigo/a</option>
+                    <option value="Novio/a">Novio/a</option>
+                    <option value="Conocido/a">Conocido/a</option>
+                  </select>
                 </label>
                 <small class="error">Parentesco de la primera referencia</small>
               </div>
@@ -291,8 +444,14 @@
               </div>
               <div class="large-3 columns">
                 <label>Parentesco
-                  <input type="text" name="referencia2_parentesco" id="referencia2_parentesco" placeholder="Parentesco" required>
-                </label>
+                  <select name="referencia2_parentesco" id="referencia2_parentesco" data-abide-validator="guarantor_required" placeholder="Parentesco" required>
+                    <option value="">Seleccione su parentesco</option>
+                    <option value="Familiar">Familiar</option>
+                    <option value="Amigo/a">Amigo/a</option>
+                    <option value="Novio/a">Novio/a</option>
+                    <option value="Conocido/a">Conocido/a</option>
+                  </select>
+                  </label>
                 <small class="error">Parentesco de la segunda referencia</small>
               </div>
               <div class="large-3 columns">
@@ -336,13 +495,55 @@
           <div class="large-12 columns">
             <label for="autorizo_publicidad">
               <input type="checkbox" name="autorizo_publicidad" id="autorizo_publicidad">
-              Autorizo recibir publicidad del SBPM
+              Autorizo recibir información del SBPM.
             </label>
           </div>
         </div>
         <div class="row row-form">
           <div class="large-12 columns">
-            <p class="text-center">Texto Habeas Data</p>
+            <!-- TEXTO HABEAS DATA -->
+            <textarea rows="10" cols="150">
+DOCUMENTO DE AUTORIZACIÓN Y REFRENDACIÓN DE USO DE DATOS PERSONALES
+
+DIRIGIDO A: USUARIOS, VISITANTES, EMPLEADOS, CONTRATISTAS, PROVEEDORES Y COLABORADORES DEL SISTEMA DE BIBLIOTECAS PÚBLICAS DE MEDELLÍN.
+En cumplimiento de la ley 1581 de 2012 y el Decreto 1377 de 2013, que desarrollan el principio constitucional que tienen todas las personas a conocer, actualizar y rectificar todo tipo de información recogida o, que haya sido objeto de tratamiento de datos personales en bancos o bases de datos y, en general en archivos de entidades públicas y/o privadas.
+INFORMAMOS QUE TUS DATOS PERSONALES SE ENCUENTRAN INCLUIDOS EN LAS BASES DE DATOS DEL SISTEMA DE BIBLIOTECAS PÚBLICAS DE MEDELLÍN, PROYECTO DE LA ALCALDÍA DE MEDELLÍN.
+El Sistema de Bibliotecas Públicas de Medellín y la Alcaldía de Medellín a través de la Secretaría de Cultura Ciudadana en cumplimiento del plan Institucional y el Plan de Desarrollo Municipal propician la formación de lectores críticos y creativos, apoyan la educación permanente en todos los niveles - formal y no formal, a través de unidades de información para la comunidad y desarrollan e innovan los servicios informativos.
+Durante la prestación de los diferentes servicios a cargo del SBPM, se almacenan y recolectan datos personales, por lo que requerimos obtener su autorización para que todas las dependencias y unidades de información puedan continuar realizando las acciones de tratamiento de los datos personales que han recolectado y almacenado en las distintas bases o bancos de datos, o en repositorios electrónicos del SBPM.
+Dicha información es y será utilizada exclusivamente en el desarrollo de nuestras funciones.
+Por lo anterior, y conforme a lo contemplado en el artículo 10 del decreto 1377 de 2013 , el SBPM y la Alcaldía de Medellín a través de la Secretaría de Cultura Ciudadana, queda autorizada de manera expresa e inequívoca para mantener y manejar toda su información, a no ser que usted, dentro de los (30) días hábiles siguientes contados a partir de la recepción de la presente comunicación, manifieste lo contrario utilizando una de las siguientes alternativas: escribiendo a la cuenta de correo electrónico sistemadebibliotecas@bibliotecasmedellin.gov.co dispuesta para tal efecto; o remitiendo oficio a la siguiente dirección Carrera 53A #42-161 Piso13 Torre A - Plaza de la Libertad, Secretaría de Cultura Ciudadana.
+En el evento que la supresión no proceda por razones legales, contractuales o de otro tipo, se le informará de ello oportunamente.
+Para el ejercicio de sus derechos de conocer, actualizar, rectificar o suprimir sus datos personales, o en el evento en que usted tenga alguna observación o comentario sobre el manejo y uso de sus datos personales, o en caso de que usted considere que el SBPM y la Alcaldía de Medellín a través de la Secretaría de Cultura Ciudadana, brindó un uso contrario al autorizado y a las leyes aplicables, puede hacerlo a través de cualquiera de los siguientes mecanismos: escribiendo al correo electrónico lider@bibliotecasmedellin.gov.co o mediante comunicación escrita dirigida a Luz Estela Peña, líder del programa Sistema de Bibliotecas Públicas, responsable de coordinar las acciones tendientes a la protección de datos de en SBPM teléfono: 3855084.
+
+POLÍTICA DE PRIVACIDAD
+De acuerdo a la ley de protección de datos personales 1581 de 2012 de Habeas Data y el Decreto 1377 de 2013 es importante que los usuarios de la BPP y del SBPM tengan conocimiento de lo siguiente:
+Al aceptar los términos y condiciones legales, indicas que conoces y autorizas de manera libre, previa, voluntaria, expresa y debidamente informada a la Biblioteca Publica Piloto de Medellín para América Latina y al Sistema de Bibliotecas Públicas de Medellín, para recolectar, registrar, procesar, difundir, compilar, intercambiar, actualizar y disponer de los datos o información parcial suministrada al momento de registro en el sitio web de la BPP o en cualquiera de las Unidades de Información (BPP, filiales, Bibliotecas de Proximidad o Parques Biblioteca), así como para transferir dichos datos o información parcial o total a través de nuestros sistemas de información con el fin de que la BPP y el SBPM pueda ofrecer sus servicios a sus usuarios de una manera más personalizada y directa, utilizando la información que de forma voluntaria suministraste mediante el registro de datos personales.
+EL SISTEMA DE BIBLIOTECAS PÚBLICAS DE MEDELLÍN Y LA BIBLIOTECA PÚBLICA PILOTO declara que protege los datos suministrados por sus clientes en virtud de lo dispuesto en la normatividad regulatoria del derecho al HABEAS DATA e informa a sus usuarios, que le asisten los siguientes derechos:
+1. Conocer, actualizar y rectificar sus datos personales
+2. Verificar la autorización otorgada
+3. Ser informado acerca del uso que se le ha dado a sus datos personales.
+4. Presentar ante la Dirección General de la BPP, las quejas que considere
+5. Revocar la autorización y solicitar la eliminación de algún dato cuando considere que no se le han respetado sus derechos
+6. Acceder en forma gratuita a los datos personales que voluntariamente y a través de éste formato decide compartir con EL SISTEMA DE BIBLIOTECAS PÚBLICAS DE MEDELLÍN Y LA BIBLIOTECA PÚBLICA PILOTO
+
+EXONERACIÓN DE RESPONSABILIDAD:
+Siempre que no se haya notificado oportunamente por parte del usuario la existencia de la violación de su información personal, uso indebido, sustracción o cuando se realice un uso indebido de sus datos de registro, el SBPM y la BPP no asume ninguna responsabilidad por tales acciones.
+SOPORTE:
+En caso de que los usuarios tengan alguna duda, inquietud o requieran información adicional, pueden contactarse con la unidad de soporte a través del correo electrónico: sistemadebibliotecas@bibliotecasmedellin.gov.co
+
+Seguridad y almacenamiento
+Como ya se mencionó EL SBPM y LA BPP tienen la responsabilidad y compromiso de proteger la privacidad de sus usuarios, para lo cual toman todas las medidas de seguridad que considere pertinentes para proteger la información de los usuarios, sin embargo, es necesario aclarar que en internet no es posible garantizar una seguridad al 100%, por ello no nos hacemos responsables por interceptaciones ilegales o violación de sus sistemas o bases de datos por parte de personas no autorizadas, así como tampoco se hace responsable por la indebida utilización de la información obtenida por esos medios.
+
+Modificación de la Política de Privacidad y Seguridad
+EL SBPM Y LA BPP podrán modificar sin previo aviso y en cualquier momento las condiciones establecidas en la presente Política de Privacidad y Seguridad. Cualquier cambio será efectivo apenas sea publicado en nuestro sitio web.
+
+
+Juan Carlos Sánchez Retrepo
+Subsecretario de Lectura, Bibliotecas y Patrimonio
+Secretaría de Cultura Ciudadana
+Alcaldía de Medellín
+Medellín - Colombia
+            </textarea>
           </div>
         </div>
         <div class="row row-form">
@@ -362,3 +563,4 @@
   <script src="js/rbmam.js"></script>
 </body>
 </html>
+

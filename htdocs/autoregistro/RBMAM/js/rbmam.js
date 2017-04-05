@@ -4,6 +4,13 @@
 */
 
 jQuery(document).ready(function() {
+
+  // El texto capturado por el usuario se pasa a
+  // mayúsculas.
+  jQuery('input').keyup(function() {
+    this.value = this.value.toUpperCase();
+  });
+
   jQuery(document).foundation({
     abide : {
       patterns: {
@@ -106,10 +113,12 @@ jQuery(document).ready(function() {
     }
   })
   .on('submit', function() {
+    console.log( 'Hola', jQuery('#form_registro').serialize() );
     if (valid_form === 'true') {
       jQuery('.alert-container').hide();
 
       var nocuenta = jQuery('#nocuenta').val();
+      var tipo_identificacion = jQuery('#tipo_identificacion').val();
 
       var apellido_paterno = jQuery('#apellido_paterno').val();
       var apellido_materno = jQuery('#apellido_materno').val();
@@ -124,9 +133,10 @@ jQuery(document).ready(function() {
 
       var biblioteca = jQuery('#biblioteca').val();
 
-      var nacimiento = jQuery('#year').val() +
-                       jQuery('#month').val() +
-                       jQuery('#day').val();
+      var year 			= jQuery('#year').val();
+      var month 		= jQuery('#month').val();
+      var day       	= jQuery('#day').val();
+      var nacimiento 	= '|b' + year + '|c' + month + '|d' + day;
 
       var sexo     = jQuery('#sexo').val();
       var telefono = jQuery('#telefono').val();
@@ -173,42 +183,46 @@ jQuery(document).ready(function() {
 
       // variables dummy
       var cat2;
+      var autoregistro;
 
       JaniumAPI.POST('/usuario/autoregistro', JaniumAPI.KEY, {
         // Datos generales
-        nocuenta: nocuenta,                     // nocuenta
-        nombre: nombre,                         // nombre
-        perfil: 'RED DE BIBLIOTECAS MEDELLIN',  // Fijo en 'RED DE BIBLIOTECAS MEDELLIN'
-        biblioteca: biblioteca,                 // biblioteca
-        idalterno: nocuenta,                    // nocuenta
-        vigencia: vigencia,                     // Un año a partir de la fecha de registro
-        cat1: ocupacion,                        // cat1 => select Ocupación
-        cat2: cat2,                             // nula
-        nivel_seguridad: 'Público',             // fijo en 'Público'
-        funcion: 'Catálogo al público',         // fijo en 'Catálogo'
+        nocuenta: nocuenta,                       // nocuenta
+        nombre: nombre,                           // nombre
+        perfil: 'RED DE BIBLIOTECAS MEDELLIN',    // Fijo en 'RED DE BIBLIOTECAS MEDELLIN'
+        biblioteca: biblioteca,                   // biblioteca
+        idalterno: nocuenta,                      // nocuenta
+        vigencia: vigencia,                       // Un año a partir de la fecha de registro
+        cat1: ocupacion,                          // cat1 => select Ocupación
+        cat2: cat2,                               // nula
+        nivel_seguridad: 'Público',               // fijo en 'Público'
+        funcion: 'Catálogo al público',           // fijo en 'Catálogo'
 
         //perfil: 'Público',
         //biblioteca: 'Bib. Literatura',
         //cat1: 'Administrativos',
 
         // Datos domicilio => Local
-        domicilio: direccion,                   // domicilio
-        colonia: barrio,                        // colonia
-        ciudad: ciudad,                         // ciudad
-        telefono: telefono,                     // teléfono
-        email: email,                           // email
+        domicilio: direccion,                     // domicilio
+        colonia: barrio,                          // colonia
+        ciudad: ciudad,                           // ciudad
+        telefono: telefono,                       // teléfono
+        email: email,                             // email
 
         // Notas extendidas
-        nacimiento: nacimiento,                  // AñoMesDia
-        sexo: sexo,                              // select Sexo
-        celular: celular,                        // celular
-        trabajo: lugar_trabajo,                  // lugar_trabajo
-        estudio: lugar_estudio,                  // lugar_estudio
-        discapacidad: discapacidad,              // SI/NO
-        referencia: referencia,                  // Nombre/Parentesco/Telefono
-        referencia2: referencia2,                // Nombre/Parentesco/Telefono
-        fiadores: fiador,                        // Nombre/Parentesco/Telefono
-        autorizo_publicidad: autorizo_publicidad // SI/NO
+        nacimiento: nacimiento,                   // AñoMesDia // Año/Mes/Dia
+        sexo: sexo,                               // select Sexo
+        celular: celular,                         // celular
+        trabajo: lugar_trabajo,                   // lugar_trabajo
+        estudio: lugar_estudio,                   // lugar_estudio
+        discapacidad: discapacidad,               // SI/NO
+        referencia: referencia,                   // Nombre/Parentesco/Telefono
+        referencia2: referencia2,                 // Nombre/Parentesco/Telefono
+        fiadores: fiador,                         // Nombre/Parentesco/Telefono
+        autorizo_publicidad: autorizo_publicidad, // SI/NO
+        tipo_identificacion: tipo_identificacion, // select tipo_identificacion
+        autoregistro: 'Usuario autoregistrado',   // fijo en 'Usuario autoregistrado'
+        naturaleza: 'Natural'                     // fijo en 'Natural'
       });
     }
   });
