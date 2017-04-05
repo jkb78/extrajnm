@@ -113,7 +113,6 @@ jQuery(document).ready(function() {
     }
   })
   .on('submit', function() {
-    console.log( 'Hola', jQuery('#form_registro').serialize() );
     if (valid_form === 'true') {
       jQuery('.alert-container').hide();
 
