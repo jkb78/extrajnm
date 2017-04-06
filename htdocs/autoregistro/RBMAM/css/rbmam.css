@@ -27,3 +27,5 @@ fieldset legend { background-color: #f3f2ed; }
 .mandatory.order { color: #f00; }
 
 .guarantor_instructions { color: #8B0000 }
+
+input[type="text"] { text-transform: uppercase; }

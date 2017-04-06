@@ -5,12 +5,6 @@
 
 jQuery(document).ready(function() {
 
-  // El texto capturado por el usuario se pasa a
-  // mayúsculas.
-  jQuery('input').keyup(function() {
-    this.value = this.value.toUpperCase();
-  });
-
   jQuery(document).foundation({
     abide : {
       patterns: {
@@ -77,155 +71,156 @@ jQuery(document).ready(function() {
   var valid_form = 'false';
 
   jQuery('#form_registro')
-  // .on('invalid.fndtn.abide', function() {
-  //   var invalid_fields = jQuery(this).find('[data-invalid]');
-  //   console.log(invalid_fields);
-  // })
-  .on('valid.fndtn.abide', function() {
-    var check_age = new Date(Date.now());
-        check_age.setFullYear(check_age.getFullYear() - 7);
+    .on('valid.fndtn.abide', function() {
+      var check_age = new Date(Date.now());
+          check_age.setFullYear(check_age.getFullYear() - 7);
 
-    var fecha_nacimiento = new Date(
-                             jQuery('#year').val(),
-                             jQuery('#month').val() - 1,
-                             jQuery('#day').val()
-                           );
+      var fecha_nacimiento = new Date(
+                               jQuery('#year').val(),
+                               jQuery('#month').val() - 1,
+                               jQuery('#day').val()
+                             );
 
-    if (fecha_nacimiento > check_age) {
-      //console.log('Menor de 7 años');
-      var fiador_nombre     = jQuery('#fiador_nombre').val().trim();
-      var fiador_parentesco = jQuery('#fiador_parentesco').val().trim();
-      var fiador_telefono   = jQuery('#fiador_telefono').val().trim();
+      if (fecha_nacimiento > check_age) {
+        //console.log('Menor de 7 años');
+        var fiador_nombre     = jQuery('#fiador_nombre').val().trim();
+        var fiador_parentesco = jQuery('#fiador_parentesco').val().trim();
+        var fiador_telefono   = jQuery('#fiador_telefono').val().trim();
 
-      if ((fiador_nombre === '') || (fiador_parentesco === '') || (fiador_telefono === '')) {
-        jQuery('.mandatory').removeClass('suggestion').addClass('order');
-        jQuery('.guarantor_instructions').show();
-        jQuery('.guarantor').addClass('error');
-        jQuery('#fiador_nombre').focus();
-        valid_form = 'false';
+        if ((fiador_nombre === '') || (fiador_parentesco === '') || (fiador_telefono === '')) {
+          jQuery('.mandatory').removeClass('suggestion').addClass('order');
+          jQuery('.guarantor_instructions').show();
+          jQuery('.guarantor').addClass('error');
+          jQuery('#fiador_nombre').focus();
+          valid_form = 'false';
+        }
+        else {
+          valid_form = 'true';
+        }
       }
       else {
         valid_form = 'true';
       }
-    }
-    else {
-      valid_form = 'true';
-    }
-  })
-  .on('submit', function() {
-    if (valid_form === 'true') {
-      jQuery('.alert-container').hide();
+    })
+    .on('submit', function() {
+      if (valid_form === 'true') {
+        jQuery('.alert-container').hide();
 
-      var nocuenta = jQuery('#nocuenta').val();
-      var tipo_identificacion = jQuery('#tipo_identificacion').val();
+        // El texto capturado por el usuario se pasa a mayúsculas.
+        jQuery('#form_registro').find('input:text').each(function() {
+          jQuery(this).val( this.value.toUpperCase() );
+        });
 
-      var apellido_paterno = jQuery('#apellido_paterno').val();
-      var apellido_materno = jQuery('#apellido_materno').val();
-      var apellidos = (apellido_paterno !== '') ? apellido_paterno : '';
-          apellidos = (apellido_materno !== '') ? apellidos + ' ' + apellido_materno : apellidos;
-          apellidos = apellidos.replace(/\s+/g, ' ').trim();
+        var nocuenta = jQuery('#nocuenta').val();
+        var tipo_identificacion = jQuery('#tipo_identificacion').val();
 
-      var nombre = (apellidos !== '') ? apellidos + ', ' + jQuery('#nombre').val()
-                                      : jQuery('#nombre').val();
-          nombre = nombre.toUpperCase();
-          nombre = nombre.replace(/\s+/g, ' ').trim();
+        var apellido_paterno = jQuery('#apellido_paterno').val();
+        var apellido_materno = jQuery('#apellido_materno').val();
+        var apellidos = (apellido_paterno !== '') ? apellido_paterno : '';
+            apellidos = (apellido_materno !== '') ? apellidos + ' ' + apellido_materno : apellidos;
+            apellidos = apellidos.replace(/\s+/g, ' ').trim();
 
-      var biblioteca = jQuery('#biblioteca').val();
+        var nombre = (apellidos !== '') ? apellidos + ', ' + jQuery('#nombre').val()
+                                        : jQuery('#nombre').val();
+            nombre = nombre.replace(/\s+/g, ' ').trim();
 
-      var year 			= jQuery('#year').val();
-      var month 		= jQuery('#month').val();
-      var day       	= jQuery('#day').val();
-      var nacimiento 	= '|b' + year + '|c' + month + '|d' + day;
+        var biblioteca = jQuery('#biblioteca').val();
 
-      var sexo     = jQuery('#sexo').val();
-      var telefono = jQuery('#telefono').val();
-      var celular  = jQuery('#celular').val();
+        var year        = jQuery('#year').val();
+        var month       = jQuery('#month').val();
+        var day         = jQuery('#day').val();
+        var nacimiento  = '|b' + year + '|c' + month + '|d' + day;
 
-      var ocupacion     = jQuery('#ocupacion').val();
-      var lugar_trabajo = jQuery('#lugar_trabajo').val().replace(/\s+/g, ' ').trim();
-      var lugar_estudio = jQuery('#lugar_estudio').val().replace(/\s+/g, ' ').trim();
+        var sexo     = jQuery('#sexo').val();
+        var telefono = jQuery('#telefono').val();
+        var celular  = jQuery('#celular').val();
 
-      var direccion = jQuery('#direccion').val().replace(/\s+/g, ' ').trim();
-      var barrio    = jQuery('#barrio').val().replace(/\s+/g, ' ').trim();
-      var ciudad    = jQuery('#ciudad').val().replace(/\s+/g, ' ').trim();
+        var ocupacion     = jQuery('#ocupacion').val();
+        var lugar_trabajo = jQuery('#lugar_trabajo').val().replace(/\s+/g, ' ').trim();
+        var lugar_estudio = jQuery('#lugar_estudio').val().replace(/\s+/g, ' ').trim();
 
-      var email        = jQuery('#email').val();
-      var discapacidad = jQuery('#discapacidad').val();
+        var direccion = jQuery('#direccion').val().replace(/\s+/g, ' ').trim();
+        var barrio    = jQuery('#barrio').val().replace(/\s+/g, ' ').trim();
+        var ciudad    = jQuery('#ciudad').val().replace(/\s+/g, ' ').trim();
 
-      var nombre_ref1     = jQuery('#referencia1_nombre').val().toUpperCase().replace(/\s+/g, ' ').trim();
-      var parentesco_ref1 = jQuery('#referencia1_parentesco').val().replace(/\s+/g, ' ').trim();
-      var telefono_ref1   = jQuery('#referencia1_telefono').val();
-      var referencia      = nombre_ref1 + '|b' + parentesco_ref1 + '|c' + telefono_ref1;
+        var email        = jQuery('#email').val();
+        var discapacidad = jQuery('#discapacidad').val();
 
-      var nombre_ref2     = jQuery('#referencia2_nombre').val().toUpperCase().replace(/\s+/g, ' ').trim();
-      var parentesco_ref2 = jQuery('#referencia2_parentesco').val().replace(/\s+/g, ' ').trim();
-      var telefono_ref2   = jQuery('#referencia2_telefono').val();
-      var referencia2      = nombre_ref2 + '|b' + parentesco_ref2 + '|c' + telefono_ref2;
+        var nombre_ref1     = jQuery('#referencia1_nombre').val().replace(/\s+/g, ' ').trim();
+        var parentesco_ref1 = jQuery('#referencia1_parentesco').val().replace(/\s+/g, ' ').trim();
+        var telefono_ref1   = jQuery('#referencia1_telefono').val();
+        var referencia      = nombre_ref1 + '|b' + parentesco_ref1 + '|c' + telefono_ref1;
 
-      var fiador;
-      var nombre_fiador     = jQuery('#fiador_nombre').val().toUpperCase().replace(/\s+/g, ' ').trim();
-      var parentesco_fiador = jQuery('#fiador_parentesco').val();
-      var telefono_fiador   = jQuery('#fiador_telefono').val().replace(/\s+/g, ' ').trim();
+        var nombre_ref2     = jQuery('#referencia2_nombre').val().replace(/\s+/g, ' ').trim();
+        var parentesco_ref2 = jQuery('#referencia2_parentesco').val().replace(/\s+/g, ' ').trim();
+        var telefono_ref2   = jQuery('#referencia2_telefono').val();
+        var referencia2     = nombre_ref2 + '|b' + parentesco_ref2 + '|c' + telefono_ref2;
 
-      if ((nombre_fiador !== '') && (parentesco_fiador !== '') && (telefono_fiador !== '')) {
-        fiador = nombre_fiador + '|b' + parentesco_fiador + '|c' + telefono_fiador;
-      }
+        var fiador;
+        var nombre_fiador     = jQuery('#fiador_nombre').val().replace(/\s+/g, ' ').trim();
+        var parentesco_fiador = jQuery('#fiador_parentesco').val();
+        var telefono_fiador   = jQuery('#fiador_telefono').val().replace(/\s+/g, ' ').trim();
 
-      var autorizo_publicidad = jQuery('#autorizo_publicidad').is(":checked") ? 'SI' : 'NO';
+        if ((nombre_fiador !== '') && (parentesco_fiador !== '') && (telefono_fiador !== '')) {
+          fiador = nombre_fiador + '|b' + parentesco_fiador + '|c' + telefono_fiador;
+        }
 
-      var next_year = new Date(Date.now());
-          next_year.setFullYear(next_year.getFullYear() + 1);
-      var year  = next_year.getFullYear();
-      var month = next_year.getMonth() + 1;
-      var day   = next_year.getDate();
-      var vigencia = year + '' + ("0"+month).slice(-2) + '' + ("0"+day).slice(-2);
+        var autorizo_publicidad = jQuery('#autorizo_publicidad').is(":checked") ? 'SI' : 'NO';
 
-      // variables dummy
-      var cat2;
-      var autoregistro;
+        var next_year = new Date(Date.now());
+            next_year.setFullYear(next_year.getFullYear() + 1);
 
-      JaniumAPI.POST('/usuario/autoregistro', JaniumAPI.KEY, {
-        // Datos generales
-        nocuenta: nocuenta,                       // nocuenta
-        nombre: nombre,                           // nombre
-        perfil: 'RED DE BIBLIOTECAS MEDELLIN',    // Fijo en 'RED DE BIBLIOTECAS MEDELLIN'
-        biblioteca: biblioteca,                   // biblioteca
-        idalterno: nocuenta,                      // nocuenta
-        vigencia: vigencia,                       // Un año a partir de la fecha de registro
-        cat1: ocupacion,                          // cat1 => select Ocupación
-        cat2: cat2,                               // nula
-        nivel_seguridad: 'Público',               // fijo en 'Público'
-        funcion: 'Catálogo al público',           // fijo en 'Catálogo'
+        var nyear    = next_year.getFullYear();
+        var nmonth   = next_year.getMonth() + 1;
+        var nday     = next_year.getDate();
+        var vigencia = nyear + '' + ("0" + nmonth).slice(-2) + '' + ("0" + nday).slice(-2);
 
-        //perfil: 'Público',
-        //biblioteca: 'Bib. Literatura',
-        //cat1: 'Administrativos',
+        // variables dummy
+        var cat2;
+        var autoregistro;
 
-        // Datos domicilio => Local
-        domicilio: direccion,                     // domicilio
-        colonia: barrio,                          // colonia
-        ciudad: ciudad,                           // ciudad
-        telefono: telefono,                       // teléfono
-        email: email,                             // email
+        JaniumAPI.POST('/usuario/autoregistro', JaniumAPI.KEY, {
+          // Datos generales
+          nocuenta: nocuenta,                       // nocuenta
+          nombre: nombre,                           // nombre
+          perfil: 'RED DE BIBLIOTECAS MEDELLIN',    // Fijo en 'RED DE BIBLIOTECAS MEDELLIN'
+          biblioteca: biblioteca,                   // biblioteca
+          idalterno: nocuenta,                      // nocuenta
+          vigencia: vigencia,                       // Un año a partir de la fecha de registro
+          cat1: ocupacion,                          // cat1 => select Ocupación
+          cat2: cat2,                               // nula
+          nivel_seguridad: 'Público',               // fijo en 'Público'
+          funcion: 'Catálogo al público',           // fijo en 'Catálogo'
 
-        // Notas extendidas
-        nacimiento: nacimiento,                   // AñoMesDia // Año/Mes/Dia
-        sexo: sexo,                               // select Sexo
-        celular: celular,                         // celular
-        trabajo: lugar_trabajo,                   // lugar_trabajo
-        estudio: lugar_estudio,                   // lugar_estudio
-        discapacidad: discapacidad,               // SI/NO
-        referencia: referencia,                   // Nombre/Parentesco/Telefono
-        referencia2: referencia2,                 // Nombre/Parentesco/Telefono
-        fiadores: fiador,                         // Nombre/Parentesco/Telefono
-        autorizo_publicidad: autorizo_publicidad, // SI/NO
-        tipo_identificacion: tipo_identificacion, // select tipo_identificacion
-        autoregistro: 'Usuario autoregistrado',   // fijo en 'Usuario autoregistrado'
-        naturaleza: 'Natural'                     // fijo en 'Natural'
-      });
-    }
-  });
-});
+          //perfil: 'Público',
+          //biblioteca: 'Bib. Literatura',
+          //cat1: 'Administrativos',
+
+          // Datos domicilio => Local
+          domicilio: direccion,                     // domicilio
+          colonia: barrio,                          // colonia
+          ciudad: ciudad,                           // ciudad
+          telefono: telefono,                       // teléfono
+          email: email,                             // email
+
+          // Notas extendidas
+          nacimiento: nacimiento,                   // AñoMesDia // Año/Mes/Dia
+          sexo: sexo,                               // select Sexo
+          celular: celular,                         // celular
+          trabajo: lugar_trabajo,                   // lugar_trabajo
+          estudio: lugar_estudio,                   // lugar_estudio
+          discapacidad: discapacidad,               // SI/NO
+          referencia: referencia,                   // Nombre/Parentesco/Telefono
+          referencia2: referencia2,                 // Nombre/Parentesco/Telefono
+          fiadores: fiador,                         // Nombre/Parentesco/Telefono
+          autorizo_publicidad: autorizo_publicidad, // SI/NO
+          tipo_identificacion: tipo_identificacion, // select tipo_identificacion
+          autoregistro: 'Usuario autoregistrado',   // fijo en 'Usuario autoregistrado'
+          naturaleza: 'Natural'                     // fijo en 'Natural'
+        }); // JaniumAPI.POST
+      } // valid_form === true
+    }); // on('submit')
+}); // (document).ready
 
 function json_janium_api_callback(rsp) {
 // callback para la API de Janium
