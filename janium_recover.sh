@@ -7,6 +7,7 @@ mkdir tmp
 mkdir log
 mkdir etc/apache
 mkdir logs
+mkdir logs/api
 mkdir logs/busquedas
 mkdir logs/ts
 mkdir logs/jd
